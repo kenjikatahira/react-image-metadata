@@ -1,7 +1,9 @@
 {
   "name": "react-image-metadata",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "author": "Kenji Katahira <kenjikatahira@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
