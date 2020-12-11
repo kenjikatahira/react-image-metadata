@@ -4,6 +4,8 @@
   "private": true,
   "author": "Kenji Katahira <kenjikatahira@gmail.com>",
   "license": "MIT",
+  "repository": "https://github.com/kenjikatahira/react-image-metadata",
+  "main": "src/index.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
