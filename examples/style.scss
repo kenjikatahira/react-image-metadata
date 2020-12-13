@@ -1,0 +1,29 @@
+.app {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "title title title title title"
+      "image image image description description";
+    font-family: "Lato";
+
+    .image-wrapper {
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        grid-area : image;
+        padding: 25px;
+        img {
+            max-height: 90vh;
+        }
+    }
+    .map {
+        width: 40vw;
+        padding: 25px;
+        height: 90vh;
+        grid-area : description;
+        .leaflet-container {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
