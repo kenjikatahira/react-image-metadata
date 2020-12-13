@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "This is a react component as npm module starter",
   "main": "index.js",
+  "homepage" : "./",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
