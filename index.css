@@ -1,0 +1,2 @@
+.app{display:grid;grid-template-rows:auto;grid-template-areas:"title title title title title" "image image image description description";font-family:"Lato"}.app .image-wrapper{display:flex;align-items:center;justify-content:center;grid-area:image;padding:25px}.app .image-wrapper img{max-width:80vh}.app .map{width:40vw;padding:25px;height:90vh;grid-area:description}.app .map .leaflet-container{min-height:100%}
+
