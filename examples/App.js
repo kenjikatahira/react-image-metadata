@@ -4,19 +4,18 @@ import ImageMetadata from '../src/';
 
 import './style.scss';
 
-import itu from './itu.jpg';
 import colorado from './colorado.jpg';
 
 const App = () => {
 	const [position,setPosition] = useState([]);
 	const onMetadata = (metadata) => {
-		console.log(metadata)
 		const {latitude,longitude} = metadata;
-		setPosition([latitude,longitude]);
-		
+		if(latitude && longitude) {
+			setPosition([latitude,longitude]);
+		}
 	};
 
-	const getMap = () => {
+	const getMap = () => {	
 		return (
 			<MapContainer center={position} zoom={13} scrollWheelZoom={false}>
 			<TileLayer
@@ -36,7 +35,7 @@ const App = () => {
 		<div className="app">
 			<div className="image-wrapper">
 				<ImageMetadata onMetadata={onMetadata}>
-					<img src={itu} />
+					<img src={colorado} />
 				</ImageMetadata>
 			</div>
 			<div className="map">
