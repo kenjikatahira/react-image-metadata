@@ -49,7 +49,7 @@ const StyledApp = Styled.div`
 		align-items: center;
 		flex-direction: column;
 		
-		height: 100vh;
+		height: 90vh;
 		.leaflet-container {
 			width: 600px;
 			height: 40vh;
