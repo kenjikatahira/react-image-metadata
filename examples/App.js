@@ -12,10 +12,16 @@ import colorado from './images/colorado.jpg';
 const images = [itu,sp,salvationMountain,colorado];
 
 const StyledApp = Styled.div`
+	.header {
+		padding-top: 30px;
+		text-align:center;
+	}
+
 	.image-wrapper {
 		display:flex;
 		align-items: center;
 		justify-content: center;
+		flex-direction: column;
 
 		img {
 			max-width: 85%;
@@ -46,7 +52,22 @@ const App = () => {
 
 	const onMetadata = (exif) => {
 		const {latitude,longitude, Flash, Make, Model, Copyright, CreateData, FNumber,LensModel,OffsetTime,Orientation,SceneType} = exif;
-		setPosition({latitude, longitude, Flash, Make, Model, Copyright, CreateData, FNumber,LensModel,OffsetTime,Orientation,SceneType})
+		setPosition(
+			{
+				latitude,
+				longitude,
+				Flash,
+				Make,
+				Model,
+				Copyright,
+				CreateData,
+				FNumber,
+				LensModel,
+				OffsetTime,
+				Orientation,
+				SceneType
+			}
+		)
 	};
 
 	const getMap = (position) => {
@@ -86,31 +107,39 @@ const App = () => {
 
 	const getRow = (image,index) => {
 		return(
-			<div className="columns">
-				<div className="column image-wrapper">
-					<ImageMetadata onMetadata={onMetadata}>
-						<img src={image} />
-					</ImageMetadata>
-				</div>
-				<div className="column map">
-					<div className="card">
-						<div className="card-image">
-							{(metadatas[index] || {}).hasOwnProperty('Make') && getMap(metadatas[index])}
-						</div>
-						<div className="card-content">
-							<div className="content">
-								{(metadatas[index] || {}).hasOwnProperty('Make') && getContent(metadatas[index])}
+			<>
+				<div className="columns">
+					<div className="column image-wrapper">
+						<ImageMetadata onMetadata={onMetadata}>
+							<img src={image} />
+						</ImageMetadata>
+					</div>
+					<div className="column map">
+						<div className="card">
+							<div className="card-content">
+								<div className="content">
+									{(metadatas[index] || {}).hasOwnProperty('Make') && getContent(metadatas[index])}
+								</div>
+							</div>
+							<div className="card-image">
+								{(metadatas[index] || {}).hasOwnProperty('Make') && getMap(metadatas[index])}
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			</>
 		)
 	}
 
 	return (
 		<StyledApp className="app">
-			{ images.map(getRow) }
+			<div className="container is-fluid">
+				<div className="header">
+					<h1 class="title">react-image-metadata</h1>
+					<h2 class="subtitle">A react component to get image's metadatas</h2>
+				</div>
+				{ images.map(getRow) }
+			</div>
 		</StyledApp>
 	)
 }
