@@ -23,9 +23,24 @@ const StyledApp = Styled.div`
 		justify-content: center;
 		flex-direction: column;
 
-		img {
+		a {
+			position:relative;
 			max-width: 85%;
 			max-height: 74vh;
+		}
+		img {
+			max-width: 100%;
+			max-height: 74vh;
+		}
+		
+		.copyright {
+			position:absolute;
+			bottom: -25px;
+			left: 0px;
+			z-index:99;
+			font-size: 13px;
+			padding: 5px;
+			color: #999;
 		}
 	}
 	.map {
@@ -90,7 +105,7 @@ const App = () => {
 
 	const getContent = ({latitude, longitude, Flash, Make, Model, CreateData, FNumber,LensModel,OffsetTime,Orientation,SceneType}) => {
 		return(
-			<>
+			<div key={`row-${FNumber}`}>
 				<p><b>Location</b>: {latitude} , {longitude}</p>
 				<p><b>Make</b>: {Make}</p>
 				<p><b>Model</b>: {Model}</p>
@@ -101,18 +116,21 @@ const App = () => {
 				<p><b>OffsetTime</b>: {OffsetTime}</p>
 				<p><b>Orientation</b>: {Orientation}</p>
 				<p><b>SceneType</b>: {SceneType}</p>
-			</>
+			</div>
 		)
 	}
 
 	const getRow = (image,index) => {
 		return(
 			<>
-				<div className="columns" id={`row-${index}`} key={index}>
+				<div className="columns" id={`row-${index+1}`} key={`row-${index+1}`}>
 					<div className="column image-wrapper">
-						<ImageMetadata onMetadata={onMetadata}>
-							<img src={image} />
-						</ImageMetadata>
+							<a href="https://www.instagram.com/kenjica/" target="_blank">
+								<ImageMetadata onMetadata={onMetadata}>
+									<img src={image} />
+								</ImageMetadata>
+								<span className="copyright">Kenji Katahira Copyright 2020. All rights reserved.</span>
+							</a>
 					</div>
 					<div className="column map">
 						<div className="card">
