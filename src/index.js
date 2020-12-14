@@ -31,7 +31,6 @@ class ImageMetadata extends React.Component {
         exifr.parse(image)
         .then(output => {
             props.onMetadata(this.getOutput(output))
-            console.log(output)
         })
         .catch(error => {
             props.onError(error)
