@@ -108,7 +108,7 @@ const App = () => {
 	const getRow = (image,index) => {
 		return(
 			<>
-				<div className="columns">
+				<div className="columns" id={`row-${index}`} key={index}>
 					<div className="column image-wrapper">
 						<ImageMetadata onMetadata={onMetadata}>
 							<img src={image} />
@@ -135,8 +135,8 @@ const App = () => {
 		<StyledApp className="app">
 			<div className="container is-fluid">
 				<div className="header">
-					<h1 class="title">react-image-metadata</h1>
-					<h2 class="subtitle">A react component to get image's metadatas</h2>
+					<h1 className="title">react-image-metadata</h1>
+					<h2 className="subtitle">A react component to get image's metadata</h2>
 				</div>
 				{ images.map(getRow) }
 			</div>

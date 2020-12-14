@@ -1,7 +1,7 @@
 {
-  "name": "react-component-npm-starter",
+  "name": "react-image-metadata",
   "version": "1.0.0",
-  "description": "This is a react component as npm module starter",
+  "description": "A react component to get image's metadata",
   "main": "index.js",
   "homepage": "./",
   "scripts": {
