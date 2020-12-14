@@ -49,7 +49,7 @@ class ImageMetadata extends React.Component {
             throw new Error('It can have only one image at time.')
         } else if( size === 1 ) {
             if(this.props.children.type !== 'img') {
-                throw new Error('Component expects a image element , src or blob.')
+                throw new Error('Component expects a image element or src')
             } else if ( size === 1 && this.props.children.type === 'img') {
                 return this.props.children
             } 
