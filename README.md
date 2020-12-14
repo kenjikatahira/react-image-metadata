@@ -1,7 +1,6 @@
 # React Image Metadata
-
+![](https://i.ibb.co/whq2S24/image.png)
 A react component to extract metadata from a image
-
 
 ![](https://img.shields.io/badge/Code-Javascript-informational?style=flat&logo=javascript&logoColor=white&color=2bbc8a)
 ![](https://img.shields.io/badge/Code-React-informational?style=flat&logo=react&logoColor=white&color=2bbc8a)
